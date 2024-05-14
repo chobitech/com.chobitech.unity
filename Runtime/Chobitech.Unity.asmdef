@@ -3,12 +3,13 @@
     "rootNamespace": "",
     "references": [
         "Unity.Addressables",
-        "Unity.ResourceManager"
+        "Unity.ResourceManager",
+        "Chobitech"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
-    "allowUnsafeCode": true,
-    "overrideReferences": true,
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
     "precompiledReferences": [
         "ChobiLib.dll"
     ],
