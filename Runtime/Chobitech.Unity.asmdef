@@ -1,6 +1,5 @@
 {
     "name": "Chobitech.Unity",
-    "rootNamespace": "Chobitech",
     "references": [
         "Unity.Addressables",
         "Unity.ResourceManager"
