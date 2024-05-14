@@ -1,0 +1,9 @@
+{
+    "name": "com.chobitech.unity",
+    "version": "0.0.1",
+    "displayName": "CHobitech.Unity",
+    "description": "Unity library for chobitech private use",
+    "dependencies": {
+      "com.unity.addressables": "1.21.20"
+   }
+  }
