@@ -1,6 +1,6 @@
 {
     "name": "com.chobitech.unity",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "displayName": "Chobitech.Unity",
     "description": "Unity library for chobitech private use",
     "dependencies": {

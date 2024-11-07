@@ -56,5 +56,49 @@ namespace Chobitech.Unity
             p += gap;
             tr.position = p;
         }
+
+
+        public static void SetPropertyWithMaterialPropertyBlock<T>(this T sr, MaterialPropertyBlock srcBlock, UnityAction<MaterialPropertyBlock> action) where T : Renderer
+        {
+            var mpb = srcBlock ?? new MaterialPropertyBlock();
+            sr.GetPropertyBlock(mpb);
+            action(mpb);
+            sr.SetPropertyBlock(mpb);
+        }
+        public static void SetPropertyWithMaterialPropertyBlock<T>(this T sr, UnityAction<MaterialPropertyBlock> action) where T : Renderer
+        {
+            sr.SetPropertyWithMaterialPropertyBlock(null, action);
+        }
+
+        public static void SetBool(this MaterialPropertyBlock mpb, string name, bool b)
+        {
+            mpb.SetFloat(name, b ? 1 : 0);
+        }
+        public static void SetBool(this MaterialPropertyBlock mpb, int nameId, bool b)
+        {
+            mpb.SetFloat(nameId, b ? 1 : 0);
+        }
+
+
+
+        //--- 2024/11/07 added
+        private static IEnumerator ConvertUnityAction(UnityAction action)
+        {
+            action();
+            yield break;
+        }
+        public static IEnumerator ToIEnumerator(this UnityAction action)
+        {
+            return ConvertUnityAction(action);
+        }
+        public static UnityAction ToUnityAction(this IEnumerator process)
+        {
+            return () =>
+            {
+                while (process.MoveNext())
+                {
+                }
+            };
+        }
     }
 }
